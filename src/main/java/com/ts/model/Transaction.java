@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "transactions") // Plural is standard for table names
+@Table(name = "transactions")
 public class Transaction implements Serializable {
 
     @Id
@@ -27,18 +27,41 @@ public class Transaction implements Serializable {
     @JoinColumn(name = "to_user_id", nullable = false)
     private User receiver;
 
-    public Transaction() {}
+    @Column(length = 255)
+    private String note;
 
-    public Transaction(User sender, User receiver, BigDecimal amount) {
+    public Transaction() {
+    }
+
+    public Transaction(User sender, User receiver, BigDecimal amount, String note) {
         this.sender = sender;
         this.receiver = receiver;
         this.amount = amount;
+        this.note = note;
         this.timestamp = LocalDateTime.now();
     }
 
-    public Long getId() { return id; }
-    public BigDecimal getAmount() { return amount; }
-    public LocalDateTime getTimestamp() { return timestamp; }
-    public User getSender() { return sender; }
-    public User getReceiver() { return receiver; }
+    public Long getId() {
+        return id;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public User getSender() {
+        return sender;
+    }
+
+    public User getReceiver() {
+        return receiver;
+    }
+
+    public String getNote() {
+        return note;
+    }
 }

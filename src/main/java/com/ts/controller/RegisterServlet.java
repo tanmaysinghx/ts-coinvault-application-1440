@@ -21,14 +21,16 @@ public class RegisterServlet extends HttpServlet {
         try {
             // 1. Get Data
             String username = req.getParameter("username");
+            String password = req.getParameter("password");
             double initialBalance = Double.parseDouble(req.getParameter("amount"));
 
             // 2. Call Logic
-            User createdUser = userService.registerUser(username, initialBalance);
+            User createdUser = userService.registerUser(username, password, initialBalance);
 
-            // 3. SUCCESS: Pass the 'user' object to the dashboard JSP
-            req.setAttribute("user", createdUser);
-            req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
+            // 3. SUCCESS: Create Session & Redirect
+            jakarta.servlet.http.HttpSession session = req.getSession();
+            session.setAttribute("loggedUser", createdUser);
+            resp.sendRedirect("dashboard");
 
         } catch (Exception e) {
             // 4. ERROR: Send them back to the form with a message
