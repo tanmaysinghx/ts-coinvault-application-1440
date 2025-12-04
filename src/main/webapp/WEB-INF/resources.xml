@@ -1,9 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <Resource id="CoinVaultDS" type="DataSource">
         JdbcDriver  = com.mysql.cj.jdbc.Driver
-        JdbcUrl     = jdbc:mysql://localhost:3306/ts_coinvault_db
-        UserName    = root
-        Password    = root
+
+        JdbcUrl     = jdbc:mysql://db1625-db1625.i.aivencloud.com:23308/db1440?sslMode=REQUIRED&amp;useSSL=true&amp;trustServerCertificate=true
+
+        UserName    = avnadmin
+        Password    =
         JtaManaged  = true
+
+        MaxActive   = 10
+        MaxIdle     = 5
     </Resource>
 </resources>

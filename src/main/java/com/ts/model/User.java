@@ -18,7 +18,6 @@ public class User implements Serializable {
     @Column(nullable = false)
     private BigDecimal balance;
 
-    // Default Constructor (Required by JPA)
     public User() {}
 
     public User(String username, BigDecimal balance) {
