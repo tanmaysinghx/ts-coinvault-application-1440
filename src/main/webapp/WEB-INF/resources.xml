@@ -6,7 +6,7 @@
         JdbcUrl     = jdbc:mysql://db1625-db1625.i.aivencloud.com:23308/db1440?sslMode=REQUIRED&amp;useSSL=true&amp;trustServerCertificate=true
 
         UserName    = avnadmin
-        Password    =
+        Password    = 
         JtaManaged  = true
 
         MaxActive   = 10

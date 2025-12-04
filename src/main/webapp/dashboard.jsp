@@ -31,6 +31,10 @@
             </div>
         </div>
 
+        <a href="transfer.jsp" class="block w-full bg-yellow-600 hover:bg-yellow-500 text-black text-center font-bold py-2 rounded-lg mb-3 transition">
+                    Make a Transfer
+                </a>
+
         <a href="register.jsp" class="block w-full bg-slate-700 hover:bg-slate-600 text-white py-2 rounded-lg transition">
             Log Out / New User
         </a>
